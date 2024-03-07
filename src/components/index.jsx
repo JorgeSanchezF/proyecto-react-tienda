@@ -1,8 +1,9 @@
+import a from '../../public/img';
 function index() {
     let juegos = [{
         nombre: 'Rule the Waves 3',
         precio: 39.99,
-        img: 'rulethewaves'
+        img: 'rulethewaves3'
     }, {
         nombre: 'Helldivers 2',
         precio: 39.99,
@@ -18,10 +19,24 @@ function index() {
         img: 'rulethewaves'
     }
     ];
+    for (const juego in juegos) {
+        let contenedor = document.getElementsByClassName('contenedor-cards');
+        let card = document.createElement('div');
+        let nombre = document.createElement('p');
+        let precio = document.createElement('p');
+        let imagen = document.createElement('img');
+        nombre.textContent = juego.nombre;
+        precio.textContent = juego.precio;
+        imagen.src = '../../public/img/' + juego.img + '.jpg';
 
-    array.forEach(element => {
+        card.appendChild(imagen);
+        card.appendChild(nombre);
+        card.appendChild(precio);
 
-    });
+        contenedor.appendChild(card);
+    }
+
+
     return (
         <div className="index">
             <head>
@@ -30,7 +45,6 @@ function index() {
 
             <body>
                 <div className="contenedor-cards">
-
                 </div>
             </body>
         </div>
