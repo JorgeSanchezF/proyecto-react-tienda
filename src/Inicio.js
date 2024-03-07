@@ -1,8 +1,10 @@
-
-import { Link } from "react-router-dom"
+// Inicio.js
+import "./styles.css";
+import { Link } from "react-router-dom";
 import Galeria from "./components/Galeria";
 
-export function Inicio() {
+
+export function Inicio({ setTitle }) {
   const images = [
     { src: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.domestika.org%2Fc_fill%2Cdpr_auto%2Cf_auto%2Cq_auto%2Fv1611859969%2Fcontent-items%2F006%2F908%2F375%2FMANCHITAS-8724-original.jpg%3F1611859969&f=1&nofb=1&ipt=ee1f715d36cda8e6c2d96e12e746c245cab514b04c907c6356b5dd7e9ad95d20&ipo=images", alt: "Image 1" },
     { src: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.z86nurg5VEy9ULrYNyQu0wHaE5%26pid%3DApi&f=1&ipt=6911a2e0ca45569d240c2267316449de554bf721154a1a7573eaf727815a739a&ipo=images", alt: "Image 2" },
@@ -10,14 +12,15 @@ export function Inicio() {
   ];
 
   return (
-    <div>
-      <head>
-        <title>Página Inicio</title>
-      </head>
-      <h1>Bienvenido a la página inicial</h1>
-      <Link to="lista">Ir a subpagina lista</Link>
+    <div className="container">
 
-      <Galeria images={images} />
+      <h1 className="heading">Bienvenido a la página inicial</h1>
+      <Link to="lista" className="link">Ir a subpagina lista</Link>
+      <Link to="objetoFondo" className="link">Ir a subpagina objeto con fondo</Link>
+
+      <div className="gallery">
+        <Galeria images={images} />
+      </div>
     </div>
   )
 }

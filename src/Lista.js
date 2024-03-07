@@ -1,4 +1,7 @@
+// Lista.js
 import React from "react";
+import { Link } from "react-router-dom";
+import "./styles.css";
 
 export function Lista() {
   const lista = [
@@ -8,10 +11,14 @@ export function Lista() {
   ];
 
   return (
-    <ul>
-      {lista.map((item) => (
-        <li key={item.id}>{item.name}</li>
-      ))}
-    </ul>
+    <div className="lista">
+      <Link to="/" className="link">Ir a inicio</Link>
+
+      <ul className="lista-items">
+        {lista.map((item) => (
+          <li key={item.id} className="lista-item">{item.name}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
